@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premedic · El respaldo que cuida a toda tu familia</title>
+<meta name="description" content="Medicina privada con centros propios, médico 24 hs y odontología. Planes por aportes y particulares. Ahora también cuidamos a tu mascota con Amar Mascotas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10241C; --ink-soft:#3E544B;
+    --green:#157A52; --green-bright:#23A06C; --green-deep:#0E5A3C;
+    --mint:#E8F4EE; --mint-deep:#D4ECE0; --paper:#F5FAF7; --white:#FFFFFF;
+    --coral:#F2884B; --coral-deep:#E26A29; --coral-wash:#FBE7D8;
+    --line:#D5E6DE;
+    --shadow:0 18px 50px -24px rgba(14,90,60,.45);
+    --shadow-sm:0 8px 24px -16px rgba(14,90,60,.55);
+    --r:18px; --maxw:1160px;
+    --display:"Bricolage Grotesque",system-ui,sans-serif;
+    --body:"Inter",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.02em;font-weight:700}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:600;font-size:1rem;padding:.85rem 1.5rem;border-radius:999px;border:0;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;white-space:nowrap}
+  .btn-primary{background:var(--green);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--green-bright)}
+  .btn-coral{background:var(--coral);color:#3a1c08}
+  .btn-coral:hover{transform:translateY(-2px);background:var(--coral-deep);color:#fff}
+  .btn-ghost{background:transparent;color:var(--green);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--green);background:var(--mint)}
+
+  /* media con fallback elegante (si el CDN bloquea el hotlink, queda un bloque de marca, nunca rota) */
+  .media{position:relative;overflow:hidden;border-radius:22px;box-shadow:var(--shadow);background:linear-gradient(135deg,var(--green-bright),var(--green-deep))}
+  .media::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.18),transparent 60%);pointer-events:none}
+  .media.warm{background:linear-gradient(135deg,var(--coral),var(--coral-deep))}
+  .media img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:cover}
+  .media.tall{aspect-ratio:4/5}
+  .media.wide{aspect-ratio:16/11}
+  .media.app{background:linear-gradient(135deg,#11352a,#0E5A3C)}
+  .media.app img{object-fit:contain;padding:14px}
+
+  /* Promo bar — Amar Mascotas */
+  .promobar{background:linear-gradient(90deg,var(--coral) 0%,var(--coral-deep) 100%);color:#fff;font-size:.92rem;font-weight:500}
+  .promobar a{display:flex;align-items:center;justify-content:center;gap:.6rem;padding:.6rem 22px;text-align:center;flex-wrap:wrap}
+  .promobar .tag{background:rgba(255,255,255,.22);border-radius:999px;padding:.1rem .6rem;font-weight:700;font-family:var(--display);font-size:.78rem;letter-spacing:.02em}
+  .promobar .arrow{transition:transform .2s ease}
+  .promobar a:hover .arrow{transform:translateX(4px)}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:40;background:rgba(245,250,247,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 22px;max-width:var(--maxw);margin:0 auto}
+  .logo{display:flex;align-items:center}
+  .logo-img{height:38px;width:auto;display:block}
+  .logo-fb{display:none;align-items:center;gap:.5rem;font-family:var(--display);font-weight:800;font-size:1.35rem;color:var(--green);letter-spacing:-.03em}
+  .logo-fb svg{width:30px;height:30px}
+  .navlinks{display:flex;align-items:center;gap:1.6rem;font-weight:500;font-size:.96rem}
+  .navlinks a{color:var(--ink-soft)}
+  .navlinks a:hover{color:var(--green)}
+  .nav-cta{display:flex;align-items:center;gap:.7rem}
+  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--green);border-radius:2px}
+
+  /* Hero */
+  .hero{padding:4rem 0 3rem;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:600;font-size:.85rem;color:var(--green);background:var(--mint-deep);padding:.4rem .85rem;border-radius:999px;margin-bottom:1.3rem}
+  .hero h1{font-size:clamp(2.4rem,5.4vw,3.7rem);font-weight:800}
+  .hero h1 .hl{color:var(--green-bright)}
+  .hero p.lead{font-size:1.18rem;color:var(--ink-soft);margin:1.3rem 0 1.8rem;max-width:32ch}
+  .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.8rem}
+  .trust{display:flex;gap:1.6rem;flex-wrap:wrap;font-size:.9rem;color:var(--ink-soft)}
+  .trust b{font-family:var(--display);font-size:1.5rem;color:var(--ink);display:block;line-height:1}
+
+  .quote-card{background:var(--white);border-radius:24px;padding:1.8rem;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .quote-card h3{font-size:1.25rem;margin-bottom:.25rem}
+  .quote-card .sub{font-size:.92rem;color:var(--ink-soft);margin-bottom:1.3rem}
+  .field{margin-bottom:.9rem}
+  .field label{display:block;font-size:.82rem;font-weight:600;color:var(--ink-soft);margin-bottom:.35rem}
+  .field input,.field select{width:100%;padding:.8rem .9rem;border:1.5px solid var(--line);border-radius:12px;font-family:var(--body);font-size:1rem;color:var(--ink);background:var(--paper)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--green);background:#fff}
+  .quote-card .btn{width:100%;justify-content:center;margin-top:.4rem}
+  .quote-card .fineprint{font-size:.78rem;color:var(--ink-soft);margin-top:.8rem;text-align:center}
+
+  .blob{position:absolute;border-radius:50%;filter:blur(8px);opacity:.5;z-index:-1}
+  .blob.a{width:380px;height:380px;background:var(--mint-deep);top:-120px;right:-90px}
+  .blob.b{width:260px;height:260px;background:var(--coral-wash);bottom:-110px;left:-80px}
+
+  section.block{padding:4.2rem 0}
+  .sec-head{max-width:660px;margin-bottom:2.6rem}
+  .sec-head.center{margin:0 auto 2.6rem;text-align:center}
+  .sec-head .kicker{font-family:var(--display);font-weight:600;color:var(--coral-deep);font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.6rem);margin:.5rem 0 .7rem}
+  .sec-head p{color:var(--ink-soft);font-size:1.08rem}
+
+  /* split image+text */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  .split .kicker{font-family:var(--display);font-weight:600;color:var(--coral-deep);font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
+  .split h2{font-size:clamp(1.8rem,3.8vw,2.5rem);margin:.5rem 0 .9rem}
+  .split p{color:var(--ink-soft);font-size:1.06rem;margin-bottom:1.3rem}
+  .ticks{list-style:none;margin-bottom:1.6rem}
+  .ticks li{display:flex;gap:.6rem;align-items:flex-start;padding:.35rem 0;color:var(--ink-soft);font-size:.98rem}
+  .ticks li svg{flex:0 0 18px;margin-top:4px;color:var(--green-bright)}
+  .collage{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .collage .media:first-child{transform:translateY(-14px)}
+  .collage .media:last-child{transform:translateY(14px)}
+
+  .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+  .bcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;transition:transform .18s ease,box-shadow .18s ease}
+  .bcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}
+  .bicon{width:46px;height:46px;border-radius:13px;background:var(--mint);display:grid;place-items:center;color:var(--green);margin-bottom:1rem}
+  .bcard h3{font-size:1.12rem;margin-bottom:.4rem}
+  .bcard p{font-size:.95rem;color:var(--ink-soft)}
+
+  .planes-sec{background:var(--mint)}
+  .planes{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;align-items:stretch}
+  .plan{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.6rem 1.3rem;display:flex;flex-direction:column;position:relative}
+  .plan.featured{border:2px solid var(--green);box-shadow:var(--shadow)}
+  .plan .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-family:var(--display);font-weight:600;font-size:.74rem;padding:.25rem .85rem;border-radius:999px;white-space:nowrap}
+  .plan .pname{font-family:var(--display);font-weight:700;font-size:1.2rem;color:var(--green-deep)}
+  .plan .pdesc{font-size:.9rem;color:var(--ink-soft);margin:.5rem 0 1.1rem;min-height:2.6em}
+  .plan ul{list-style:none;margin-bottom:1.4rem;flex:1}
+  .plan li{display:flex;gap:.5rem;align-items:flex-start;font-size:.9rem;padding:.32rem 0;color:var(--ink-soft)}
+  .plan li svg{flex:0 0 16px;margin-top:3px;color:var(--green-bright)}
+  .plan .btn{width:100%;justify-content:center;font-size:.92rem;padding:.7rem 1rem}
+  .planes-note{text-align:center;margin-top:1.6rem;color:var(--ink-soft);font-size:.95rem}
+
+  /* App */
+  .app-sec{background:var(--paper)}
+
+  /* Amar Mascotas */
+  .pets{background:linear-gradient(160deg,#FFF6EF 0%,#FBE7D8 100%);position:relative;overflow:hidden}
+  .pets-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  .pets .kicker{font-family:var(--display);font-weight:600;color:var(--coral-deep);font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
+  .pets h2{font-size:clamp(2rem,4.4vw,2.9rem);color:#5a2a0c;margin:.5rem 0}
+  .pets h2 .hl{color:var(--coral-deep)}
+  .pets p.lead{font-size:1.12rem;color:#714a31;margin:1.1rem 0 1.6rem;max-width:42ch}
+  .pet-feats{display:grid;gap:.7rem;margin-bottom:1.8rem}
+  .pet-feat{display:flex;gap:.8rem;align-items:center;font-weight:500;color:#5a2a0c}
+  .pet-feat .pf-ic{width:38px;height:38px;border-radius:11px;background:#fff;display:grid;place-items:center;color:var(--coral-deep);flex:0 0 38px;box-shadow:var(--shadow-sm)}
+  .pet-media-wrap{position:relative}
+  .pet-badge{position:absolute;left:-14px;bottom:18px;z-index:3;background:#fff;border-radius:16px;padding:.9rem 1.1rem;box-shadow:var(--shadow);border:2px dashed var(--coral);text-align:center}
+  .pet-badge .big{font-family:var(--display);font-weight:800;font-size:1.7rem;color:var(--coral-deep);line-height:1}
+  .pet-badge small{display:block;font-size:.74rem;color:#714a31;max-width:15ch;margin-top:.2rem}
+  .paw{position:absolute;color:rgba(226,106,41,.10);z-index:0}
+  .paw.p1{top:30px;right:40px;width:90px;height:90px}
+  .paw.p2{bottom:20px;left:30px;width:64px;height:64px}
+
+  .phones{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:var(--maxw);margin:0 auto;padding:0 22px 1rem}
+  .phone{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.3rem;display:flex;align-items:center;gap:.9rem}
+  .phone .pic{width:40px;height:40px;border-radius:12px;background:var(--mint);display:grid;place-items:center;color:var(--green);flex:0 0 40px}
+  .phone small{display:block;color:var(--ink-soft);font-size:.82rem}
+  .phone b{font-family:var(--display);font-size:1.25rem;color:var(--ink)}
+
+  .cta{background:var(--green);color:#fff;border-radius:28px;padding:3rem;text-align:center;margin:4rem auto;max-width:var(--maxw)}
+  .cta h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem)}
+  .cta p{color:#cfeae0;font-size:1.1rem;margin:.8rem auto 1.8rem;max-width:48ch}
+  .cta .btn{background:#fff;color:var(--green)}
+  .cta .btn:hover{background:var(--coral);color:#3a1c08}
+
+  footer{background:var(--ink);color:#cddfd6;padding:3rem 0 2rem;font-size:.92rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+  .foot-logo{display:flex;align-items:center;gap:.5rem;color:#fff;font-family:var(--display);font-weight:800;font-size:1.3rem;margin-bottom:.8rem}
+  .foot-logo svg{width:30px;height:30px}
+  footer h4{font-family:var(--display);color:#fff;font-size:1rem;margin-bottom:.8rem}
+  footer a{display:block;color:#a9c5bb;padding:.22rem 0}
+  footer a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:1.4rem;color:#86a499;font-size:.82rem;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:980px){.planes{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:900px){
+    .hero-grid,.pets-grid,.split{grid-template-columns:1fr;gap:2.2rem}
+    .split .media-col{order:-1}
+    .benefits{grid-template-columns:1fr 1fr}
+    .phones,.foot-grid{grid-template-columns:1fr 1fr}
+    .navlinks{position:fixed;inset:0 0 auto 0;top:0;background:#fff;flex-direction:column;padding:5rem 2rem 2rem;gap:1.2rem;align-items:flex-start;transform:translateY(-110%);transition:transform .3s ease;box-shadow:var(--shadow);z-index:50}
+    .navlinks.open{transform:none}
+    .navlinks a{font-size:1.2rem}
+    .burger{display:flex;z-index:60}
+    .nav-cta .btn-ghost{display:none}
+  }
+  @media(max-width:560px){
+    .benefits,.planes,.phones,.foot-grid{grid-template-columns:1fr}
+    .cta{padding:2.2rem 1.4rem;border-radius:20px}
+    .hero{padding:2.4rem 0 2rem}
+    .collage .media{transform:none!important}
+  }
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- AVISO / PROMO — Amar Mascotas -->
+<div class="promobar">
+  <a href="#mascotas">
+    <span class="tag">NUEVO</span>
+    Somos la primera prepaga que también cuida a tu mascota — Amar Mascotas, incluido en todos los planes sin costo adicional
+    <span class="arrow">→</span>
+  </a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <a href="#" class="logo" aria-label="Premedic - Inicio">
+      <img class="logo-img" alt="Premedic"
+        src="https://cdn.prod.website-files.com/6807c039eee3d2a528cc66a7/68700e3fa33203485a489160_c302c3bc92586de095b896f9ad3f885b_Frame%201171275079%20%281%29.png"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <span class="logo-fb">
+        <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="#157A52"/><path d="M16 6c-3 0-5.5 2.4-5.5 5.4 0 2.2 1.4 4 3.3 4.8V25a1 1 0 0 0 2 0v-9c1.9-.8 3.3-2.6 3.3-4.8C19.1 8.4 16.6 6 16 6Z" fill="#fff"/></svg>
+        Premedic
+      </span>
+    </a>
+    <nav class="navlinks" id="nav">
+      <a href="#centros">Centros propios</a>
+      <a href="#planes">Planes</a>
+      <a href="#mascotas">Amar Mascotas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://afiliados.grupopremedic.com.ar/" class="btn btn-ghost">Mi portal</a>
+      <a href="#cotizar" class="btn btn-primary">Cotizar plan</a>
+      <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob a"></div><div class="blob b"></div>
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">● Cobertura en 5 provincias · Centros médicos propios</span>
+      <h1>Cuidamos a toda tu familia. <span class="hl">Ahora también a tu mascota.</span></h1>
+      <p class="lead">Médico las 24 hs en tu celular, centros médicos y odontológicos propios, y una amplia red de prestadores. Asociate en minutos.</p>
+      <div class="hero-cta">
+        <a href="#cotizar" class="btn btn-primary">Quiero asociarme</a>
+        <a href="#planes" class="btn btn-ghost">Ver planes</a>
+      </div>
+      <div class="trust">
+        <div><b>5</b> provincias</div>
+        <div><b>24 hs</b> médico online</div>
+        <div><b>0</b> copago en centros propios</div>
+      </div>
+    </div>
+
+    <div class="quote-card reveal" id="cotizar">
+      <h3>Cotizá tu plan gratis</h3>
+      <p class="sub">Dejanos tus datos y un asesor te contacta para ayudarte a elegir.</p>
+      <div class="field"><label for="nombre">Nombre y apellido</label><input id="nombre" type="text" placeholder="Tu nombre"></div>
+      <div class="field"><label for="tel">Teléfono / WhatsApp</label><input id="tel" type="tel" placeholder="11 5555 5555"></div>
+      <div class="field"><label for="plan">¿Qué plan te interesa?</label>
+        <select id="plan">
+          <option>Plan por aportes (relación de dependencia)</option>
+          <option>Plan Simple</option><option>Plan C-100</option><option>Plan 200</option>
+          <option>Plan 300</option><option>Plan 400</option><option>Plan 500</option>
+          <option>No sé, necesito asesoramiento</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="enviarCotizacion()">Cotizar por WhatsApp</button>
+      <p class="fineprint">Cotización sin cargo y sin compromiso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CENTROS PROPIOS (imagen + texto) -->
+<section class="block" id="centros">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="kicker">Centros propios</span>
+      <h2>Atención de primer nivel, en nuestros propios centros.</h2>
+      <p>Contás con Premedic Medical Centers y los centros odontológicos Smile Group: profesionales de excelencia, instalaciones modernas y turnos rápidos, sin copago.</p>
+      <ul class="ticks">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Consultas, estudios y prácticas en un mismo lugar</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Odontología Smile Group con tecnología de última generación</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Turnos online desde la app Premedic Móvil</li>
+      </ul>
+      <a href="#cotizar" class="btn btn-primary">Quiero asociarme</a>
+    </div>
+    <div class="collage media-col reveal">
+      <div class="media tall"><img alt="Centro médico propio PMC" loading="lazy"
+        src="https://cdn.prod.website-files.com/6807c039eee3d2a528cc66a7/68c32f4f193c6198810f802f_d6a7fb1dd231368b678b0327d70c2f66_Frame%201321315001.avif"
+        onerror="this.style.display='none'"></div>
+      <div class="media tall"><img alt="Centro odontológico Smile Group" loading="lazy"
+        src="https://cdn.prod.website-files.com/6807c039eee3d2a528cc66a7/68adc2c5935ff2fb4d39ae39_be79df434a672de5a1d6d5eb5cbe88da_DSC01658.avif"
+        onerror="this.style.display='none'"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Tus beneficios</span>
+      <h2>Todo lo que necesitás, en un solo lugar.</h2>
+      <p>Servicios pensados para resolverte el día a día sin trámites ni demoras.</p>
+    </div>
+    <div class="benefits">
+      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Llamando al Doctor</h3><p>Un médico en tu celular las 24 hs, los 365 días. Chateá o hacé tu videollamada al instante.</p></div>
+      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-6 9 6v10H3z"/><path d="M9 19v-6h6v6"/></svg></div><h3>Premedic Bienestar</h3><p>Videollamadas sin cargo con psicólogos, nutricionistas, entrenadores y más profesionales.</p></div>
+      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></div><h3>Vacunación en casa</h3><p>Coordiná tu turno y aplicate las vacunas en la comodidad de tu hogar.</p></div>
+      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg></div><h3>Asistencia al viajero</h3><p>Viajá tranquilo: tu plan incluye cobertura y asistencia en tus viajes por todo el país.</p></div>
+      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18M3 9l2-4h14l2 4M5 9v10h14V9"/></svg></div><h3>Descuentos en Farmacity</h3><p>Beneficios y descuentos exclusivos en medicamentos en toda la red de Farmacity.</p></div>
+      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></div><h3>Médico IA</h3><p>Tu asistente de salud 24/7: chateá y resolvé tus dudas en cualquier momento.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section class="block planes-sec" id="planes">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Nuestros planes</span>
+      <h2>Elegí el plan que se adapta a vos.</h2>
+      <p>Todos incluyen cobertura en consultas, prácticas, internación y emergencias médicas.</p>
+    </div>
+    <div class="planes">
+      <div class="plan reveal">
+        <div class="pname">Por aportes</div><div class="pdesc">Derivá los aportes de tu recibo sin pagar un extra.</div>
+        <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sin cuota mensual adicional</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Médico a domicilio</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Centros propios sin copago</li></ul>
+        <a href="#cotizar" class="btn btn-ghost">Cotizar</a>
+      </div>
+      <div class="plan reveal">
+        <div class="pname">Simple</div><div class="pdesc">La puerta de entrada a la salud privada, accesible.</div>
+        <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Cartilla de especialistas</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Médico online 24 hs</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Emergencias incluidas</li></ul>
+        <a href="#cotizar" class="btn btn-ghost">Cotizar</a>
+      </div>
+      <div class="plan featured reveal">
+        <div class="badge">El más elegido</div>
+        <div class="pname">Plan 300</div><div class="pdesc">El equilibrio ideal entre cobertura y precio.</div>
+        <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Amplia red de sanatorios</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Odontología Smile Group</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Amar Mascotas incluido</li></ul>
+        <a href="#cotizar" class="btn btn-primary">Cotizar</a>
+      </div>
+      <div class="plan reveal">
+        <div class="pname">Plan 500</div><div class="pdesc">La cobertura más completa, con sanatorios premium.</div>
+        <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorios de máxima categoría</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Internación de alta complejidad</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Todos los beneficios</li></ul>
+        <a href="#cotizar" class="btn btn-ghost">Cotizar</a>
+      </div>
+    </div>
+    <p class="planes-note">También disponibles los planes <b>C-100</b>, <b>200</b> y <b>400</b>. Consultá con un asesor.</p>
+  </div>
+</section>
+
+<!-- APP (imagen + texto) -->
+<section class="block app-sec">
+  <div class="wrap split">
+    <div class="media-col reveal">
+      <div class="media app tall"><img alt="App Premedic Móvil" loading="lazy"
+        src="https://cdn.prod.website-files.com/6807c039eee3d2a528cc66a7/68a337c39ba1ca5af90953ce_7f5ffa373d39157942a3d58acde59138_Frame%201171275206.avif"
+        onerror="this.style.display='none'"></div>
+    </div>
+    <div class="reveal">
+      <span class="kicker">App Premedic Móvil</span>
+      <h2>Todas tus gestiones, en un solo lugar.</h2>
+      <p>Llevá tu salud en el bolsillo: credencial digital, cartilla, autorización de órdenes y turnos en nuestros centros, todo desde la app.</p>
+      <ul class="ticks">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Credencial digital siempre a mano</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Autorizá órdenes y seguí el estado en tiempo real</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sacá turnos y accedé a Amar Mascotas</li>
+      </ul>
+      <div class="hero-cta">
+        <a href="https://play.google.com/store/apps/details?id=com.paisanoscreando.premedic" class="btn btn-primary">Google Play</a>
+        <a href="https://apps.apple.com/bo/app/premedic-m%C3%B3vil/id1091291561" class="btn btn-ghost">App Store</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMAR MASCOTAS (imagen + texto) -->
+<section class="block pets" id="mascotas">
+  <svg class="paw p1" viewBox="0 0 100 100" fill="currentColor"><circle cx="28" cy="34" r="11"/><circle cx="52" cy="26" r="11"/><circle cx="75" cy="38" r="11"/><circle cx="86" cy="62" r="10"/><path d="M50 50c16 0 28 12 28 24S64 92 50 92 22 86 22 74s12-24 28-24Z"/></svg>
+  <svg class="paw p2" viewBox="0 0 100 100" fill="currentColor"><circle cx="28" cy="34" r="11"/><circle cx="52" cy="26" r="11"/><circle cx="75" cy="38" r="11"/><circle cx="86" cy="62" r="10"/><path d="M50 50c16 0 28 12 28 24S64 92 50 92 22 86 22 74s12-24 28-24Z"/></svg>
+  <div class="wrap pets-grid">
+    <div class="reveal">
+      <span class="kicker">Amar Mascotas 🐾</span>
+      <h2>Tu mascota también es <span class="hl">familia.</span></h2>
+      <p class="lead">Somos la primera prepaga que cuida a vos y a tu mascota. Atención veterinaria sin moverte de tu casa, directo desde la app Premedic Móvil.</p>
+      <div class="pet-feats">
+        <div class="pet-feat"><span class="pf-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-6 9 6v10H3z"/></svg></span>Veterinario a domicilio para perros y gatos</div>
+        <div class="pet-feat"><span class="pf-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>Consultas online y asesoramiento</div>
+        <div class="pet-feat"><span class="pf-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h4l2 5 4-10 2 5h4"/></svg></span>Vacunación y estudios a domicilio</div>
+      </div>
+      <a href="#cotizar" class="btn btn-coral">Quiero asociarme</a>
+    </div>
+    <div class="pet-media-wrap reveal">
+      <div class="media warm tall"><img alt="Veterinaria a domicilio para tu mascota" loading="lazy"
+        src="https://cdn.prod.website-files.com/6807c0c81fda1bf62762e2ec/6a219f2f516b4a4b452f151e_Mascota%20%282%29.avif"
+        onerror="this.style.display='none'"></div>
+      <div class="pet-badge">
+        <div class="big">$0</div>
+        <small>de cargo extra · incluido en todos los planes</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TELEFONOS -->
+<section style="padding-top:1.2rem">
+  <div class="phones">
+    <a class="phone reveal" href="tel:08108883226"><span class="pic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2Z"/></svg></span><div><small>Urgencias médicas</small><b>0810-888-3226</b></div></a>
+    <a class="phone reveal" href="tel:08102225522"><span class="pic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></span><div><small>Atención al cliente</small><b>0810-222-5522</b></div></a>
+    <a class="phone reveal" href="tel:08106667676"><span class="pic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg></span><div><small>Asistencia al viajero</small><b>0810-666-7676</b></div></a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contacto">
+  <div class="cta reveal">
+    <h2>Asociate hoy y empezá a cuidarte.</h2>
+    <p>Cotizá tu plan en minutos y un asesor te acompaña en todo el proceso. Para vos, tu familia y tu mascota.</p>
+    <a href="#cotizar" class="btn">Cotizar mi plan gratis</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="#23A06C"/><path d="M16 6c-3 0-5.5 2.4-5.5 5.4 0 2.2 1.4 4 3.3 4.8V25a1 1 0 0 0 2 0v-9c1.9-.8 3.3-2.6 3.3-4.8C19.1 8.4 16.6 6 16 6Z" fill="#fff"/></svg>
+          Premedic
+        </div>
+        <p style="max-width:32ch;color:#a9c5bb">Medicina privada con atención personalizada y un sistema de salud adaptado a vos y tu familia.</p>
+      </div>
+      <div><h4>Planes</h4><a href="#planes">Por aportes</a><a href="#planes">Simple</a><a href="#planes">200 · 300 · 400 · 500</a><a href="#mascotas">Amar Mascotas</a></div>
+      <div><h4>Premedic</h4><a href="#centros">Centros propios</a><a href="#">Cartilla médica</a><a href="#">Sobre Premedic</a><a href="#contacto">Contacto</a></div>
+      <div><h4>Contacto</h4><a href="https://api.whatsapp.com/send/?phone=5491122647285">💬 WhatsApp</a><a href="https://afiliados.grupopremedic.com.ar/">🔐 Mi portal</a><a href="#">📍 Presencia en 5 provincias</a></div>
+    </div>
+    <div class="foot-bottom">
+      Superintendencia de Servicios de Salud · Órgano de control de Obras Sociales y entidades de Medicina Prepaga · 0800-222-SALUD (72583) · www.sssalud.gob.ar · RNEMP Nº 112172<br>
+      Grupo Premedic — Medicina Privada (Grupo DDM S.A.) · © 2026 Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const WHATSAPP="5491122647285"; // WhatsApp de Premedic (público) — cambialo por el de captura de leads si querés
+  function enviarCotizacion(){
+    const n=document.getElementById('nombre').value.trim();
+    const t=document.getElementById('tel').value.trim();
+    const p=document.getElementById('plan').value;
+    if(!n||!t){alert('Completá tu nombre y teléfono para cotizar.');return;}
+    const msg=`Hola Premedic! Quiero cotizar un plan.%0A%0ANombre: ${encodeURIComponent(n)}%0ATeléfono: ${encodeURIComponent(t)}%0AInterés: ${encodeURIComponent(p)}`;
+    window.open(`https://wa.me/${WHATSAPP}?text=${msg}`,'_blank');
+  }
+</script>
+</body>
+</html>
