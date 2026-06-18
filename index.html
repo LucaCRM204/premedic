@@ -91,6 +91,19 @@
   .blob.a{width:380px;height:380px;background:var(--mint-deep);top:-120px;right:-90px}
   .blob.b{width:260px;height:260px;background:var(--coral-wash);bottom:-110px;left:-80px}
 
+  /* Franja de promo con countdown */
+  .promo-strip{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .promo-inner{display:flex;align-items:center;gap:1.6rem;padding:1.4rem 22px;position:relative;max-width:var(--maxw);margin:0 auto}
+  .promo-inner::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:6px;background:linear-gradient(180deg,#F5C451,var(--coral));border-radius:0 4px 4px 0}
+  .promo-content{flex:1;padding-left:1.1rem}
+  .promo-kicker{font-family:var(--display);font-weight:700;color:var(--green-deep);letter-spacing:.06em;font-size:.8rem;text-transform:uppercase}
+  .promo-title{font-size:clamp(1.05rem,2.2vw,1.45rem);line-height:1.2;margin:.25rem 0 .45rem;color:var(--ink)}
+  .promo-title span{color:var(--coral-deep)}
+  .promo-count{font-weight:700;color:var(--coral-deep);font-size:.95rem}
+  .promo-count #cd{font-family:var(--display);font-variant-numeric:tabular-nums}
+  .promo-cta{white-space:nowrap}
+  @media(max-width:760px){.promo-inner{flex-direction:column;align-items:flex-start}.promo-cta{width:100%;justify-content:center}}
+
   section.block{padding:4.2rem 0}
   .sec-head{max-width:660px;margin-bottom:2.6rem}
   .sec-head.center{margin:0 auto 2.6rem;text-align:center}
@@ -268,6 +281,18 @@
       <button class="btn btn-primary" onclick="enviarCotizacion()">Cotizar por WhatsApp</button>
       <p class="fineprint">Cotización sin cargo y sin compromiso.</p>
     </div>
+  </div>
+</section>
+
+<!-- FRANJA DE PROMO -->
+<section class="promo-strip">
+  <div class="promo-inner">
+    <div class="promo-content">
+      <span class="promo-kicker">Oferta por tiempo limitado</span>
+      <h3 class="promo-title">¿Trabajás en relación de dependencia? Derivá los aportes de tu recibo de sueldo y sumate a Premedic <span>sin abonar la cuota mensual</span>.</h3>
+      <div class="promo-count">La promo vence en <span id="cd">72:00:00</span> hs · asociate antes de que se termine.</div>
+    </div>
+    <a href="#cotizar" class="btn btn-primary promo-cta">Aprovechar la promo</a>
   </div>
 </section>
 
@@ -460,6 +485,27 @@
     const msg=`Hola Premedic! Quiero cotizar un plan.%0A%0ANombre: ${encodeURIComponent(n)}%0ATeléfono: ${encodeURIComponent(t)}%0AInterés: ${encodeURIComponent(p)}`;
     window.open(`https://wa.me/${WHATSAPP}?text=${msg}`,'_blank');
   }
+
+  // Contador regresivo de la promo
+  (function(){
+    const el=document.getElementById('cd');
+    if(!el) return;
+    const DURACION_HS=72; // ← cambiá acá cuántas horas dura la promo
+    let fin;
+    try{
+      const k='promoPremedicFin', saved=localStorage.getItem(k);
+      fin = (saved && +saved>Date.now()) ? +saved : Date.now()+DURACION_HS*3600*1000;
+      localStorage.setItem(k,fin);
+    }catch(e){ fin=Date.now()+DURACION_HS*3600*1000; }
+    function tick(){
+      let s=Math.max(0,Math.floor((fin-Date.now())/1000));
+      const h=String(Math.floor(s/3600)).padStart(2,'0');
+      const m=String(Math.floor((s%3600)/60)).padStart(2,'0');
+      const sec=String(s%60).padStart(2,'0');
+      el.textContent=`${h}:${m}:${sec}`;
+    }
+    tick(); setInterval(tick,1000);
+  })();
 </script>
 </body>
 </html>
