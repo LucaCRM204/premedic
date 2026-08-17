@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premedic · El respaldo que cuida a toda tu familia</title>
-<meta name="description" content="Medicina privada con centros propios, médico 24 hs y odontología. Planes por aportes y particulares. Ahora también cuidamos a tu mascota con Amar Mascotas.">
+<title>Premedic · Tu obra social te paga la mejor medicina privada</title>
+<meta name="description" content="Asociate a Premedic Medicina Privada usando tus aportes de obra social sin pagar cuota mensual. Más de 70 clínicas, 400 centros médicos y 2500 prestadores.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,31 +34,16 @@
   .btn-coral:hover{transform:translateY(-2px);background:var(--coral-deep);color:#fff}
   .btn-ghost{background:transparent;color:var(--green);border:1.5px solid var(--line)}
   .btn-ghost:hover{border-color:var(--green);background:var(--mint)}
-
-  /* media con fallback elegante (si el CDN bloquea el hotlink, queda un bloque de marca, nunca rota) */
-  .media{position:relative;overflow:hidden;border-radius:22px;box-shadow:var(--shadow);background:linear-gradient(135deg,var(--green-bright),var(--green-deep))}
-  .media::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.18),transparent 60%);pointer-events:none}
-  .media.warm{background:linear-gradient(135deg,var(--coral),var(--coral-deep))}
-  .media img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:cover}
-  .media.tall{aspect-ratio:4/5}
-  .media.wide{aspect-ratio:16/11}
-  .media.app{background:linear-gradient(135deg,#11352a,#0E5A3C)}
-  .media.app img{object-fit:contain;padding:14px}
-
-  /* Promo bar — Amar Mascotas */
-  .promobar{background:linear-gradient(90deg,var(--coral) 0%,var(--coral-deep) 100%);color:#fff;font-size:.92rem;font-weight:500}
-  .promobar a{display:flex;align-items:center;justify-content:center;gap:.6rem;padding:.6rem 22px;text-align:center;flex-wrap:wrap}
-  .promobar .tag{background:rgba(255,255,255,.22);border-radius:999px;padding:.1rem .6rem;font-weight:700;font-family:var(--display);font-size:.78rem;letter-spacing:.02em}
-  .promobar .arrow{transition:transform .2s ease}
-  .promobar a:hover .arrow{transform:translateX(4px)}
+  .btn-ghost-light{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+  .btn-ghost-light:hover{border-color:#fff;background:rgba(255,255,255,.12)}
+  .btn-block{width:100%;justify-content:center}
+  .btn-sm{font-size:.88rem;padding:.65rem 1.1rem}
 
   /* Header */
-  header{position:sticky;top:0;z-index:40;background:rgba(245,250,247,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header{position:sticky;top:0;z-index:40;background:rgba(245,250,247,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 22px;max-width:var(--maxw);margin:0 auto}
-  .logo{display:flex;align-items:center}
-  .logo-img{height:38px;width:auto;display:block}
-  .logo-fb{display:none;align-items:center;gap:.5rem;font-family:var(--display);font-weight:800;font-size:1.35rem;color:var(--green);letter-spacing:-.03em}
-  .logo-fb svg{width:30px;height:30px}
+  .logo{display:flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--green-deep);letter-spacing:-.03em}
+  .logo svg{width:30px;height:30px}
   .navlinks{display:flex;align-items:center;gap:1.6rem;font-weight:500;font-size:.96rem}
   .navlinks a{color:var(--ink-soft)}
   .navlinks a:hover{color:var(--green)}
@@ -66,115 +51,131 @@
   .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
   .burger span{width:24px;height:2px;background:var(--green);border-radius:2px}
 
-  /* Hero */
-  .hero{padding:4rem 0 3rem;position:relative;overflow:hidden}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
-  .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:600;font-size:.85rem;color:var(--green);background:var(--mint-deep);padding:.4rem .85rem;border-radius:999px;margin-bottom:1.3rem}
-  .hero h1{font-size:clamp(2.4rem,5.4vw,3.7rem);font-weight:800}
-  .hero h1 .hl{color:var(--green-bright)}
-  .hero p.lead{font-size:1.18rem;color:var(--ink-soft);margin:1.3rem 0 1.8rem;max-width:32ch}
-  .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.8rem}
-  .trust{display:flex;gap:1.6rem;flex-wrap:wrap;font-size:.9rem;color:var(--ink-soft)}
-  .trust b{font-family:var(--display);font-size:1.5rem;color:var(--ink);display:block;line-height:1}
+  /* Tag agencia */
+  .agency-tag{background:var(--ink);color:#cddfd6;text-align:center;font-size:.78rem;padding:.45rem 22px;letter-spacing:.02em}
+  .agency-tag b{color:#fff}
 
-  .quote-card{background:var(--white);border-radius:24px;padding:1.8rem;box-shadow:var(--shadow);border:1px solid var(--line)}
-  .quote-card h3{font-size:1.25rem;margin-bottom:.25rem}
-  .quote-card .sub{font-size:.92rem;color:var(--ink-soft);margin-bottom:1.3rem}
-  .field{margin-bottom:.9rem}
-  .field label{display:block;font-size:.82rem;font-weight:600;color:var(--ink-soft);margin-bottom:.35rem}
-  .field input,.field select{width:100%;padding:.8rem .9rem;border:1.5px solid var(--line);border-radius:12px;font-family:var(--body);font-size:1rem;color:var(--ink);background:var(--paper)}
+  /* Hero */
+  .hero{padding:3.4rem 0 3rem;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:start}
+  .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:600;font-size:.85rem;color:var(--green);background:var(--mint-deep);padding:.4rem .85rem;border-radius:999px;margin-bottom:1.3rem}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.4rem);font-weight:800}
+  .hero h1 .hl{color:var(--green-bright)}
+  .hero p.lead{font-size:1.14rem;color:var(--ink-soft);margin:1.2rem 0 1.7rem;max-width:42ch}
+  .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.2rem}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:520px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1rem;text-align:center}
+  .stat b{display:block;font-family:var(--display);font-size:1.6rem;color:var(--green-deep);line-height:1}
+  .stat span{font-size:.8rem;color:var(--ink-soft)}
+
+  .lead-card{background:var(--white);border-radius:24px;padding:1.8rem;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .lead-card h3{font-size:1.2rem;margin-bottom:.2rem}
+  .lead-card .sub{font-size:.9rem;color:var(--ink-soft);margin-bottom:1.2rem}
+  .field{margin-bottom:.85rem}
+  .field label{display:block;font-size:.8rem;font-weight:600;color:var(--ink-soft);margin-bottom:.3rem}
+  .field input,.field select{width:100%;padding:.75rem .9rem;border:1.5px solid var(--line);border-radius:12px;font-family:var(--body);font-size:.96rem;color:var(--ink);background:var(--paper)}
   .field input:focus,.field select:focus{outline:none;border-color:var(--green);background:#fff}
-  .quote-card .btn{width:100%;justify-content:center;margin-top:.4rem}
-  .quote-card .fineprint{font-size:.78rem;color:var(--ink-soft);margin-top:.8rem;text-align:center}
+  .lead-card .fineprint{font-size:.76rem;color:var(--ink-soft);margin-top:.75rem;text-align:center}
+  .lead-success{display:none;text-align:center;padding:1rem 0}
+  .lead-success .check{font-size:2.2rem;margin-bottom:.5rem}
+  .lead-success p{color:var(--ink-soft);font-size:.92rem;margin-bottom:1rem}
 
   .blob{position:absolute;border-radius:50%;filter:blur(8px);opacity:.5;z-index:-1}
   .blob.a{width:380px;height:380px;background:var(--mint-deep);top:-120px;right:-90px}
   .blob.b{width:260px;height:260px;background:var(--coral-wash);bottom:-110px;left:-80px}
 
-  /* Franja de promo con countdown */
-  .promo-strip{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .promo-inner{display:flex;align-items:center;gap:1.6rem;padding:1.4rem 22px;position:relative;max-width:var(--maxw);margin:0 auto}
-  .promo-inner::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:6px;background:linear-gradient(180deg,#F5C451,var(--coral));border-radius:0 4px 4px 0}
-  .promo-content{flex:1;padding-left:1.1rem}
-  .promo-kicker{font-family:var(--display);font-weight:700;color:var(--green-deep);letter-spacing:.06em;font-size:.8rem;text-transform:uppercase}
-  .promo-title{font-size:clamp(1.05rem,2.2vw,1.45rem);line-height:1.2;margin:.25rem 0 .45rem;color:var(--ink)}
-  .promo-title span{color:var(--coral-deep)}
-  .promo-count{font-weight:700;color:var(--coral-deep);font-size:.95rem}
-  .promo-count #cd{font-family:var(--display);font-variant-numeric:tabular-nums}
-  .promo-cta{white-space:nowrap}
-  @media(max-width:760px){.promo-inner{flex-direction:column;align-items:flex-start}.promo-cta{width:100%;justify-content:center}}
+  /* promo strip */
+  .promo-strip{background:linear-gradient(90deg,var(--coral) 0%,var(--coral-deep) 100%);color:#fff}
+  .promo-inner{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;padding:.85rem 22px;text-align:center;font-size:.95rem;max-width:var(--maxw);margin:0 auto}
+  .promo-inner b{font-family:var(--display)}
+
+  /* prestadores marquee */
+  .prestadores-strip{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.3rem 0;overflow:hidden}
+  .prestadores-strip .lbl{text-align:center;font-size:.82rem;color:var(--ink-soft);margin-bottom:.8rem}
+  .prest-row{display:flex;gap:2.2rem;flex-wrap:wrap;justify-content:center;max-width:var(--maxw);margin:0 auto;padding:0 22px;font-family:var(--display);font-weight:600;color:var(--ink-soft);font-size:.95rem}
 
   section.block{padding:4.2rem 0}
-  .sec-head{max-width:660px;margin-bottom:2.6rem}
-  .sec-head.center{margin:0 auto 2.6rem;text-align:center}
+  .sec-head{max-width:660px;margin-bottom:2.4rem}
+  .sec-head.center{margin:0 auto 2.4rem;text-align:center}
   .sec-head .kicker{font-family:var(--display);font-weight:600;color:var(--coral-deep);font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
-  .sec-head h2{font-size:clamp(1.9rem,4vw,2.6rem);margin:.5rem 0 .7rem}
-  .sec-head p{color:var(--ink-soft);font-size:1.08rem}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.5rem);margin:.5rem 0 .7rem}
+  .sec-head p{color:var(--ink-soft);font-size:1.06rem}
 
-  /* split image+text */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-  .split .kicker{font-family:var(--display);font-weight:600;color:var(--coral-deep);font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
-  .split h2{font-size:clamp(1.8rem,3.8vw,2.5rem);margin:.5rem 0 .9rem}
-  .split p{color:var(--ink-soft);font-size:1.06rem;margin-bottom:1.3rem}
-  .ticks{list-style:none;margin-bottom:1.6rem}
-  .ticks li{display:flex;gap:.6rem;align-items:flex-start;padding:.35rem 0;color:var(--ink-soft);font-size:.98rem}
-  .ticks li svg{flex:0 0 18px;margin-top:4px;color:var(--green-bright)}
-  .collage{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-  .collage .media:first-child{transform:translateY(-14px)}
-  .collage .media:last-child{transform:translateY(14px)}
-
-  .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-  .bcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;transition:transform .18s ease,box-shadow .18s ease}
-  .bcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}
-  .bicon{width:46px;height:46px;border-radius:13px;background:var(--mint);display:grid;place-items:center;color:var(--green);margin-bottom:1rem}
-  .bcard h3{font-size:1.12rem;margin-bottom:.4rem}
-  .bcard p{font-size:.95rem;color:var(--ink-soft)}
-
+  /* Planes */
   .planes-sec{background:var(--mint)}
   .planes{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;align-items:stretch}
   .plan{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.6rem 1.3rem;display:flex;flex-direction:column;position:relative}
   .plan.featured{border:2px solid var(--green);box-shadow:var(--shadow)}
-  .plan .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-family:var(--display);font-weight:600;font-size:.74rem;padding:.25rem .85rem;border-radius:999px;white-space:nowrap}
-  .plan .pname{font-family:var(--display);font-weight:700;font-size:1.2rem;color:var(--green-deep)}
-  .plan .pdesc{font-size:.9rem;color:var(--ink-soft);margin:.5rem 0 1.1rem;min-height:2.6em}
-  .plan ul{list-style:none;margin-bottom:1.4rem;flex:1}
-  .plan li{display:flex;gap:.5rem;align-items:flex-start;font-size:.9rem;padding:.32rem 0;color:var(--ink-soft)}
-  .plan li svg{flex:0 0 16px;margin-top:3px;color:var(--green-bright)}
-  .plan .btn{width:100%;justify-content:center;font-size:.92rem;padding:.7rem 1rem}
-  .planes-note{text-align:center;margin-top:1.6rem;color:var(--ink-soft);font-size:.95rem}
+  .plan .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-family:var(--display);font-weight:600;font-size:.72rem;padding:.25rem .85rem;border-radius:999px;white-space:nowrap}
+  .plan .pname{font-family:var(--display);font-weight:700;font-size:1.18rem;color:var(--green-deep)}
+  .plan .ptag{font-size:.84rem;color:var(--coral-deep);font-weight:600;margin-top:.15rem}
+  .plan .pprice{font-family:var(--display);font-weight:800;font-size:1.7rem;color:var(--ink);margin-top:.7rem}
+  .plan .pprice small{font-family:var(--body);font-weight:500;font-size:.72rem;color:var(--ink-soft);display:block}
+  .plan .pnote{font-size:.76rem;color:var(--ink-soft);margin:.15rem 0 1rem}
+  .plan ul{list-style:none;margin-bottom:1.3rem;flex:1}
+  .plan li{display:flex;gap:.5rem;align-items:flex-start;font-size:.87rem;padding:.3rem 0;color:var(--ink-soft)}
+  .plan li svg{flex:0 0 15px;margin-top:3px;color:var(--green-bright)}
+  .plan .btn{width:100%;justify-content:center;font-size:.9rem;padding:.68rem 1rem}
 
-  /* App */
-  .app-sec{background:var(--paper)}
+  /* cotizador */
+  .cotizador{background:#fff;border-radius:26px;padding:2.4rem;box-shadow:var(--shadow);border:1px solid var(--line);max-width:640px;margin:0 auto}
+  .cotiz-step{display:none}
+  .cotiz-step.active{display:block}
+  .cotiz-progress{display:flex;gap:.4rem;margin-bottom:1.6rem}
+  .cotiz-progress span{flex:1;height:5px;border-radius:99px;background:var(--line)}
+  .cotiz-progress span.done{background:var(--green-bright)}
+  .cotiz-q{font-family:var(--display);font-weight:700;font-size:1.25rem;margin-bottom:1.2rem}
+  .cotiz-opts{display:grid;gap:.65rem}
+  .cotiz-opt{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.1rem;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;font-weight:500;font-size:.98rem;transition:border-color .15s,background .15s}
+  .cotiz-opt:hover{border-color:var(--green-bright);background:var(--mint)}
+  .cotiz-back{margin-top:1.2rem;font-size:.86rem;color:var(--ink-soft);cursor:pointer;display:inline-flex;align-items:center;gap:.3rem}
+  .cotiz-back:hover{color:var(--green)}
+  .cotiz-result{text-align:center}
+  .cotiz-result .rprice{font-family:var(--display);font-weight:800;font-size:2.4rem;color:var(--green-deep);margin:.6rem 0 .2rem}
+  .cotiz-result .rplan{font-size:1.05rem;color:var(--ink-soft);margin-bottom:1.6rem}
+  .cotiz-fine{text-align:center;font-size:.78rem;color:var(--ink-soft);margin-top:1.4rem}
 
-  /* Amar Mascotas */
-  .pets{background:linear-gradient(160deg,#FFF6EF 0%,#FBE7D8 100%);position:relative;overflow:hidden}
-  .pets-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-  .pets .kicker{font-family:var(--display);font-weight:600;color:var(--coral-deep);font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
-  .pets h2{font-size:clamp(2rem,4.4vw,2.9rem);color:#5a2a0c;margin:.5rem 0}
-  .pets h2 .hl{color:var(--coral-deep)}
-  .pets p.lead{font-size:1.12rem;color:#714a31;margin:1.1rem 0 1.6rem;max-width:42ch}
-  .pet-feats{display:grid;gap:.7rem;margin-bottom:1.8rem}
-  .pet-feat{display:flex;gap:.8rem;align-items:center;font-weight:500;color:#5a2a0c}
-  .pet-feat .pf-ic{width:38px;height:38px;border-radius:11px;background:#fff;display:grid;place-items:center;color:var(--coral-deep);flex:0 0 38px;box-shadow:var(--shadow-sm)}
-  .pet-media-wrap{position:relative}
-  .pet-badge{position:absolute;left:-14px;bottom:18px;z-index:3;background:#fff;border-radius:16px;padding:.9rem 1.1rem;box-shadow:var(--shadow);border:2px dashed var(--coral);text-align:center}
-  .pet-badge .big{font-family:var(--display);font-weight:800;font-size:1.7rem;color:var(--coral-deep);line-height:1}
-  .pet-badge small{display:block;font-size:.74rem;color:#714a31;max-width:15ch;margin-top:.2rem}
-  .paw{position:absolute;color:rgba(226,106,41,.10);z-index:0}
-  .paw.p1{top:30px;right:40px;width:90px;height:90px}
-  .paw.p2{bottom:20px;left:30px;width:64px;height:64px}
+  /* Beneficios */
+  .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .bcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem;transition:transform .18s ease,box-shadow .18s ease}
+  .bcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}
+  .bicon{width:44px;height:44px;border-radius:13px;background:var(--mint);display:grid;place-items:center;font-size:1.3rem;margin-bottom:.9rem}
+  .bcard h3{font-size:1.05rem;margin-bottom:.35rem}
+  .bcard p{font-size:.9rem;color:var(--ink-soft)}
+  .quick-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.6rem}
+  .qstat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.2rem;text-align:center}
+  .qstat b{display:block;font-family:var(--display);font-size:1.7rem;color:var(--green-deep);line-height:1}
+  .qstat span{font-size:.8rem;color:var(--ink-soft);display:block;margin-top:.3rem}
+  .qstat small{font-size:.74rem;color:var(--ink-soft);opacity:.8}
 
-  .phones{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:var(--maxw);margin:0 auto;padding:0 22px 1rem}
-  .phone{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.3rem;display:flex;align-items:center;gap:.9rem}
-  .phone .pic{width:40px;height:40px;border-radius:12px;background:var(--mint);display:grid;place-items:center;color:var(--green);flex:0 0 40px}
-  .phone small{display:block;color:var(--ink-soft);font-size:.82rem}
-  .phone b{font-family:var(--display);font-size:1.25rem;color:var(--ink)}
+  /* Cartilla */
+  .cartilla-sec{background:var(--mint)}
+  .zone-tabs{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.8rem}
+  .zone-tab{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:.55rem 1.1rem;font-size:.88rem;font-weight:600;cursor:pointer;color:var(--ink-soft)}
+  .zone-tab.active{background:var(--green);border-color:var(--green);color:#fff}
+  .zone-panel{display:none}
+  .zone-panel.active{display:block}
+  .prest-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+  .prest-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;font-size:.92rem;font-weight:500;display:flex;align-items:center;gap:.6rem}
+  .prest-item svg{flex:0 0 16px;color:var(--green-bright)}
 
+  /* CTA */
   .cta{background:var(--green);color:#fff;border-radius:28px;padding:3rem;text-align:center;margin:4rem auto;max-width:var(--maxw)}
-  .cta h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem)}
-  .cta p{color:#cfeae0;font-size:1.1rem;margin:.8rem auto 1.8rem;max-width:48ch}
-  .cta .btn{background:#fff;color:var(--green)}
-  .cta .btn:hover{background:var(--coral);color:#3a1c08}
+  .cta h2{color:#fff;font-size:clamp(1.8rem,4vw,2.5rem)}
+  .cta p{color:#cfeae0;font-size:1.08rem;margin:.8rem auto 1.8rem;max-width:48ch}
+  .cta-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+  .cta .btn-primary{background:#fff;color:var(--green)}
+  .cta .btn-primary:hover{background:var(--coral);color:#fff}
+
+  /* FAQ */
+  .faq{max-width:760px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.2rem 0;cursor:pointer;font-family:var(--display);font-weight:600;font-size:1.02rem}
+  .faq-q svg{flex:0 0 18px;transition:transform .2s ease;color:var(--green)}
+  .faq-item.open .faq-q svg{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+  .faq-item.open .faq-a{max-height:300px}
+  .faq-a p{padding:0 0 1.2rem;color:var(--ink-soft);font-size:.96rem;line-height:1.65}
 
   footer{background:var(--ink);color:#cddfd6;padding:3rem 0 2rem;font-size:.92rem}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
@@ -188,59 +189,50 @@
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
 
-  @media(max-width:980px){.planes{grid-template-columns:repeat(2,1fr)}}
+  /* WhatsApp flotante */
+  .wa-float{position:fixed;bottom:22px;right:22px;z-index:50;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.4);transition:transform .15s ease}
+  .wa-float:hover{transform:scale(1.08)}
+
+  @media(max-width:1024px){.planes,.benefits,.prest-grid,.quick-stats{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:900px){
-    .hero-grid,.pets-grid,.split{grid-template-columns:1fr;gap:2.2rem}
-    .split .media-col{order:-1}
-    .benefits{grid-template-columns:1fr 1fr}
-    .phones,.foot-grid{grid-template-columns:1fr 1fr}
-    .navlinks{position:fixed;inset:0 0 auto 0;top:0;background:#fff;flex-direction:column;padding:5rem 2rem 2rem;gap:1.2rem;align-items:flex-start;transform:translateY(-110%);transition:transform .3s ease;box-shadow:var(--shadow);z-index:50}
+    .hero-grid{grid-template-columns:1fr;gap:2rem}
+    .navlinks{position:fixed;inset:0 0 auto 0;top:0;background:#fff;flex-direction:column;padding:5rem 2rem 2rem;gap:1.2rem;align-items:flex-start;transform:translateY(-110%);transition:transform .3s ease;box-shadow:var(--shadow);z-index:60}
     .navlinks.open{transform:none}
     .navlinks a{font-size:1.2rem}
-    .burger{display:flex;z-index:60}
+    .burger{display:flex;z-index:70}
     .nav-cta .btn-ghost{display:none}
+    .cotizador{padding:1.6rem}
   }
   @media(max-width:560px){
-    .benefits,.planes,.phones,.foot-grid{grid-template-columns:1fr}
+    .stats,.planes,.benefits,.prest-grid,.quick-stats{grid-template-columns:1fr}
     .cta{padding:2.2rem 1.4rem;border-radius:20px}
-    .hero{padding:2.4rem 0 2rem}
-    .collage .media{transform:none!important}
+    .hero{padding:2.2rem 0 1.8rem}
+    .cta-btns{flex-direction:column}
+    .cta-btns .btn{width:100%}
   }
   @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 
-<!-- AVISO / PROMO — Amar Mascotas -->
-<div class="promobar">
-  <a href="#mascotas">
-    <span class="tag">NUEVO</span>
-    Somos la primera prepaga que también cuida a tu mascota — Amar Mascotas, incluido en todos los planes sin costo adicional
-    <span class="arrow">→</span>
-  </a>
-</div>
+<div class="agency-tag">🏢 <b>Agencia Comercial Oficial</b> · Grupo Premedic</div>
 
 <!-- HEADER -->
 <header>
   <div class="nav">
     <a href="#" class="logo" aria-label="Premedic - Inicio">
-      <img class="logo-img" alt="Premedic"
-        src="https://cdn.prod.website-files.com/6807c039eee3d2a528cc66a7/68700e3fa33203485a489160_c302c3bc92586de095b896f9ad3f885b_Frame%201171275079%20%281%29.png"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <span class="logo-fb">
-        <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="#157A52"/><path d="M16 6c-3 0-5.5 2.4-5.5 5.4 0 2.2 1.4 4 3.3 4.8V25a1 1 0 0 0 2 0v-9c1.9-.8 3.3-2.6 3.3-4.8C19.1 8.4 16.6 6 16 6Z" fill="#fff"/></svg>
-        Premedic
-      </span>
+      <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="#157A52"/><path d="M16 6c-3 0-5.5 2.4-5.5 5.4 0 2.2 1.4 4 3.3 4.8V25a1 1 0 0 0 2 0v-9c1.9-.8 3.3-2.6 3.3-4.8C19.1 8.4 16.6 6 16 6Z" fill="#fff"/></svg>
+      Premedic
     </a>
     <nav class="navlinks" id="nav">
-      <a href="#centros">Centros propios</a>
       <a href="#planes">Planes</a>
-      <a href="#mascotas">Amar Mascotas</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#prestadores">Prestadores</a>
+      <a href="#preguntas">Preguntas</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://afiliados.grupopremedic.com.ar/" class="btn btn-ghost">Mi portal</a>
-      <a href="#cotizar" class="btn btn-primary">Cotizar plan</a>
+      <a href="#cotizar" class="btn btn-ghost">Ver planes</a>
+      <a href="#lead" class="btn btn-primary">Consultá ahora</a>
       <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -251,198 +243,363 @@
   <div class="blob a"></div><div class="blob b"></div>
   <div class="wrap hero-grid">
     <div class="reveal">
-      <span class="eyebrow">● Cobertura en 5 provincias · Centros médicos propios</span>
-      <h1>Cuidamos a toda tu familia. <span class="hl">Ahora también a tu mascota.</span></h1>
-      <p class="lead">Médico las 24 hs en tu celular, centros médicos y odontológicos propios, y una amplia red de prestadores. Asociate en minutos.</p>
+      <span class="eyebrow">● Agencia Comercial Oficial · Grupo Premedic</span>
+      <h1>Tu obra social te paga <span class="hl">la mejor medicina privada.</span></h1>
+      <p class="lead">Si trabajás en relación de dependencia, podés derivar tus aportes a Premedic y acceder a más de 70 clínicas, médico online 24 hs y beneficios exclusivos — sin pagar un peso más por mes.</p>
       <div class="hero-cta">
-        <a href="#cotizar" class="btn btn-primary">Quiero asociarme</a>
-        <a href="#planes" class="btn btn-ghost">Ver planes</a>
+        <a href="#lead" class="btn btn-primary">Quiero Asesoramiento</a>
+        <a href="#planes" class="btn btn-ghost">Ver Planes</a>
       </div>
-      <div class="trust">
-        <div><b>5</b> provincias</div>
-        <div><b>24 hs</b> médico online</div>
-        <div><b>0</b> copago en centros propios</div>
+      <div class="stats">
+        <div class="stat"><b>70+</b><span>Clínicas y Sanatorios</span></div>
+        <div class="stat"><b>2500+</b><span>Profesionales</span></div>
+        <div class="stat"><b>400+</b><span>Centros Médicos</span></div>
       </div>
     </div>
 
-    <div class="quote-card reveal" id="cotizar">
-      <h3>Cotizá tu plan gratis</h3>
-      <p class="sub">Dejanos tus datos y un asesor te contacta para ayudarte a elegir.</p>
-      <div class="field"><label for="nombre">Nombre y apellido</label><input id="nombre" type="text" placeholder="Tu nombre"></div>
-      <div class="field"><label for="tel">Teléfono / WhatsApp</label><input id="tel" type="tel" placeholder="11 5555 5555"></div>
-      <div class="field"><label for="plan">¿Qué plan te interesa?</label>
-        <select id="plan">
-          <option>Plan por aportes (relación de dependencia)</option>
-          <option>Plan Simple</option><option>Plan C-100</option><option>Plan 200</option>
-          <option>Plan 300</option><option>Plan 400</option><option>Plan 500</option>
-          <option>No sé, necesito asesoramiento</option>
-        </select>
+    <div class="lead-card reveal" id="lead">
+      <div id="lead-form">
+        <h3>Recibí asesoramiento gratis</h3>
+        <p class="sub">Un asesor te contacta en menos de 5 minutos</p>
+        <div class="field"><label for="nombre">Nombre completo</label><input id="nombre" type="text" placeholder="Tu nombre y apellido"></div>
+        <div class="field"><label for="tel">WhatsApp</label><input id="tel" type="tel" placeholder="11 5555 5555"></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="tu@email.com"></div>
+        <div class="field"><label for="plan">Plan de interés</label>
+          <select id="plan">
+            <option value="">¿Cuál te interesa?</option>
+            <option>Plan por Aportes (sin cuota)</option>
+            <option>Plan 200</option>
+            <option>Plan 300 — Más elegido</option>
+            <option>Plan 400 — Premium</option>
+            <option>No lo sé aún</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-block" onclick="enviarLead()">Quiero que me contacten →</button>
+        <p class="fineprint">🔒 Tus datos están protegidos. Sin spam.</p>
       </div>
-      <button class="btn btn-primary" onclick="enviarCotizacion()">Cotizar por WhatsApp</button>
-      <p class="fineprint">Cotización sin cargo y sin compromiso.</p>
+      <div id="lead-success" class="lead-success">
+        <div class="check">✅</div>
+        <h3>¡Listo! Te contactamos enseguida.</h3>
+        <p>También podés escribirnos directo por WhatsApp.</p>
+        <a class="btn btn-primary btn-block" id="lead-wa-link" href="#" target="_blank">Ir al WhatsApp</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FRANJA DE PROMO -->
-<section class="promo-strip">
+<!-- PROMO STRIP -->
+<div class="promo-strip">
   <div class="promo-inner">
-    <div class="promo-content">
-      <span class="promo-kicker">Oferta por tiempo limitado</span>
-      <h3 class="promo-title">¿Trabajás en relación de dependencia? Derivá los aportes de tu recibo de sueldo y sumate a Premedic <span>sin abonar la cuota mensual</span>.</h3>
-      <div class="promo-count">La promo vence en <span id="cd">72:00:00</span> hs · asociate antes de que se termine.</div>
-    </div>
-    <a href="#cotizar" class="btn btn-primary promo-cta">Aprovechar la promo</a>
+    🔥 <b>Promoción activa:</b> Asociate con tu recibo de sueldo — <b>sin pagar cuota mensual</b> · <a href="#lead" style="text-decoration:underline">Consultá disponibilidad →</a>
   </div>
-</section>
+</div>
 
-<!-- CENTROS PROPIOS (imagen + texto) -->
-<section class="block" id="centros">
-  <div class="wrap split">
-    <div class="reveal">
-      <span class="kicker">Centros propios</span>
-      <h2>Atención de primer nivel, en nuestros propios centros.</h2>
-      <p>Contás con Premedic Medical Centers y los centros odontológicos Smile Group: profesionales de excelencia, instalaciones modernas y turnos rápidos, sin copago.</p>
-      <ul class="ticks">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Consultas, estudios y prácticas en un mismo lugar</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Odontología Smile Group con tecnología de última generación</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Turnos online desde la app Premedic Móvil</li>
-      </ul>
-      <a href="#cotizar" class="btn btn-primary">Quiero asociarme</a>
-    </div>
-    <div class="collage media-col reveal">
-      <div class="media tall"><img alt="Centro médico propio PMC" loading="lazy"
-        src="https://cdn.prod.website-files.com/6807c039eee3d2a528cc66a7/68c32f4f193c6198810f802f_d6a7fb1dd231368b678b0327d70c2f66_Frame%201321315001.avif"
-        onerror="this.style.display='none'"></div>
-      <div class="media tall"><img alt="Centro odontológico Smile Group" loading="lazy"
-        src="https://cdn.prod.website-files.com/6807c039eee3d2a528cc66a7/68adc2c5935ff2fb4d39ae39_be79df434a672de5a1d6d5eb5cbe88da_DSC01658.avif"
-        onerror="this.style.display='none'"></div>
-    </div>
+<!-- PRESTADORES MARQUEE -->
+<div class="prestadores-strip">
+  <p class="lbl">Principales prestadores de nuestra cartilla</p>
+  <div class="prest-row">
+    <span>🏥 Hospital Británico</span><span>🏥 Sanatorio La Trinidad</span><span>🏥 Hospital Alemán</span>
+    <span>🏥 Clínica Bazterrica</span><span>🏥 CEMIC</span><span>🏥 Sanatorio Finochietto</span>
+    <span>💊 Farmacity</span><span>🏥 ICBA</span>
   </div>
-</section>
-
-<!-- BENEFICIOS -->
-<section class="block" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="kicker">Tus beneficios</span>
-      <h2>Todo lo que necesitás, en un solo lugar.</h2>
-      <p>Servicios pensados para resolverte el día a día sin trámites ni demoras.</p>
-    </div>
-    <div class="benefits">
-      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Llamando al Doctor</h3><p>Un médico en tu celular las 24 hs, los 365 días. Chateá o hacé tu videollamada al instante.</p></div>
-      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-6 9 6v10H3z"/><path d="M9 19v-6h6v6"/></svg></div><h3>Premedic Bienestar</h3><p>Videollamadas sin cargo con psicólogos, nutricionistas, entrenadores y más profesionales.</p></div>
-      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></div><h3>Vacunación en casa</h3><p>Coordiná tu turno y aplicate las vacunas en la comodidad de tu hogar.</p></div>
-      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg></div><h3>Asistencia al viajero</h3><p>Viajá tranquilo: tu plan incluye cobertura y asistencia en tus viajes por todo el país.</p></div>
-      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18M3 9l2-4h14l2 4M5 9v10h14V9"/></svg></div><h3>Descuentos en Farmacity</h3><p>Beneficios y descuentos exclusivos en medicamentos en toda la red de Farmacity.</p></div>
-      <div class="bcard reveal"><div class="bicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></div><h3>Médico IA</h3><p>Tu asistente de salud 24/7: chateá y resolvé tus dudas en cualquier momento.</p></div>
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- PLANES -->
 <section class="block planes-sec" id="planes">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="kicker">Nuestros planes</span>
-      <h2>Elegí el plan que se adapta a vos.</h2>
-      <p>Todos incluyen cobertura en consultas, prácticas, internación y emergencias médicas.</p>
+      <span class="kicker">Planes de Salud</span>
+      <h2>Elegí el plan ideal para vos y tu familia</h2>
+      <p>Con o sin cuota mensual adicional. El asesor te ayuda a elegir según tu situación.</p>
     </div>
     <div class="planes">
       <div class="plan reveal">
-        <div class="pname">Por aportes</div><div class="pdesc">Derivá los aportes de tu recibo sin pagar un extra.</div>
-        <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sin cuota mensual adicional</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Médico a domicilio</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Centros propios sin copago</li></ul>
-        <a href="#cotizar" class="btn btn-ghost">Cotizar</a>
+        <div class="pname">Plan por Aportes</div>
+        <div class="ptag">Solo con tu Obra Social</div>
+        <div class="pprice">$0<small>cuota mensual adicional</small></div>
+        <div class="pnote">Solo con tu recibo de sueldo</div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Más de 70 Clínicas y Sanatorios</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>400 Centros Médicos</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Red Odontológica Propia</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Emergencias sin cargo</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Médico por Videollamada 24 hs</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Descuentos en Farmacias</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sin coseguros en PMC propios</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Asistencia al Viajero Nacional</li>
+        </ul>
+        <a href="#lead" class="btn btn-ghost" onclick="setPlanInterest('Plan por Aportes')">Consultar Plan</a>
       </div>
+
       <div class="plan reveal">
-        <div class="pname">Simple</div><div class="pdesc">La puerta de entrada a la salud privada, accesible.</div>
-        <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Cartilla de especialistas</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Médico online 24 hs</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Emergencias incluidas</li></ul>
-        <a href="#cotizar" class="btn btn-ghost">Cotizar</a>
+        <div class="pname">Plan 200</div>
+        <div class="ptag">Precio y Calidad</div>
+        <div class="pprice">desde $81.891<small>por mes · individual · AMBA</small></div>
+        <div class="pnote">Usá el cotizador para tu precio exacto</div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Amplia Cartilla Médica</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>400 Centros Médicos</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Red Odontológica Propia</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Emergencias sin cargo</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Médico por Videollamada 24 hs</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Descuentos en Farmacias</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sin coseguros en Pediatría y Ginecología</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Asistencia al Viajero Nacional</li>
+        </ul>
+        <a href="#lead" class="btn btn-ghost" onclick="setPlanInterest('Plan 200')">Consultar Plan</a>
       </div>
+
       <div class="plan featured reveal">
-        <div class="badge">El más elegido</div>
-        <div class="pname">Plan 300</div><div class="pdesc">El equilibrio ideal entre cobertura y precio.</div>
-        <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Amplia red de sanatorios</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Odontología Smile Group</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Amar Mascotas incluido</li></ul>
-        <a href="#cotizar" class="btn btn-primary">Cotizar</a>
+        <div class="badge">⭐ Más elegido</div>
+        <div class="pname">Plan 300</div>
+        <div class="ptag">El Más Elegido</div>
+        <div class="pprice">desde $119.628<small>por mes · individual · AMBA</small></div>
+        <div class="pnote">Usá el cotizador para tu precio exacto</div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Principales Clínicas y Sanatorios</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Más de 5000 profesionales</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Más de 400 Centros Médicos</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Red Odontológica Propia</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Emergencias sin cargo</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Médico por Videollamada 24 hs</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Consultas SIN Coseguros</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Asistencia al Viajero Nac. e Int.</li>
+        </ul>
+        <a href="#lead" class="btn btn-primary" onclick="setPlanInterest('Plan 300')">Consultar Plan</a>
       </div>
+
       <div class="plan reveal">
-        <div class="pname">Plan 500</div><div class="pdesc">La cobertura más completa, con sanatorios premium.</div>
-        <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorios de máxima categoría</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Internación de alta complejidad</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Todos los beneficios</li></ul>
-        <a href="#cotizar" class="btn btn-ghost">Cotizar</a>
-      </div>
-    </div>
-    <p class="planes-note">También disponibles los planes <b>C-100</b>, <b>200</b> y <b>400</b>. Consultá con un asesor.</p>
-  </div>
-</section>
-
-<!-- APP (imagen + texto) -->
-<section class="block app-sec">
-  <div class="wrap split">
-    <div class="media-col reveal">
-      <div class="media app tall"><img alt="App Premedic Móvil" loading="lazy"
-        src="https://cdn.prod.website-files.com/6807c039eee3d2a528cc66a7/68a337c39ba1ca5af90953ce_7f5ffa373d39157942a3d58acde59138_Frame%201171275206.avif"
-        onerror="this.style.display='none'"></div>
-    </div>
-    <div class="reveal">
-      <span class="kicker">App Premedic Móvil</span>
-      <h2>Todas tus gestiones, en un solo lugar.</h2>
-      <p>Llevá tu salud en el bolsillo: credencial digital, cartilla, autorización de órdenes y turnos en nuestros centros, todo desde la app.</p>
-      <ul class="ticks">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Credencial digital siempre a mano</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Autorizá órdenes y seguí el estado en tiempo real</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sacá turnos y accedé a Amar Mascotas</li>
-      </ul>
-      <div class="hero-cta">
-        <a href="https://play.google.com/store/apps/details?id=com.paisanoscreando.premedic" class="btn btn-primary">Google Play</a>
-        <a href="https://apps.apple.com/bo/app/premedic-m%C3%B3vil/id1091291561" class="btn btn-ghost">App Store</a>
+        <div class="pname">Plan 400</div>
+        <div class="ptag">Cobertura Premium</div>
+        <div class="pprice">desde $138.787<small>por mes · individual · AMBA</small></div>
+        <div class="pnote">Usá el cotizador para tu precio exacto</div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Cartilla Premium ampliada</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Internación en cama individual</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Finochietto guardia + internación</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Estudios avanzados sin cargo</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>SIN Coseguros en TODAS las especialidades</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Cirugía cardiovascular y neurocirugía</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Asistencia al Viajero Nac. e Int.</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Strep Test sin cargo</li>
+        </ul>
+        <a href="#lead" class="btn btn-ghost" onclick="setPlanInterest('Plan 400')">Consultar Plan</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- AMAR MASCOTAS (imagen + texto) -->
-<section class="block pets" id="mascotas">
-  <svg class="paw p1" viewBox="0 0 100 100" fill="currentColor"><circle cx="28" cy="34" r="11"/><circle cx="52" cy="26" r="11"/><circle cx="75" cy="38" r="11"/><circle cx="86" cy="62" r="10"/><path d="M50 50c16 0 28 12 28 24S64 92 50 92 22 86 22 74s12-24 28-24Z"/></svg>
-  <svg class="paw p2" viewBox="0 0 100 100" fill="currentColor"><circle cx="28" cy="34" r="11"/><circle cx="52" cy="26" r="11"/><circle cx="75" cy="38" r="11"/><circle cx="86" cy="62" r="10"/><path d="M50 50c16 0 28 12 28 24S64 92 50 92 22 86 22 74s12-24 28-24Z"/></svg>
-  <div class="wrap pets-grid">
-    <div class="reveal">
-      <span class="kicker">Amar Mascotas 🐾</span>
-      <h2>Tu mascota también es <span class="hl">familia.</span></h2>
-      <p class="lead">Somos la primera prepaga que cuida a vos y a tu mascota. Atención veterinaria sin moverte de tu casa, directo desde la app Premedic Móvil.</p>
-      <div class="pet-feats">
-        <div class="pet-feat"><span class="pf-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-6 9 6v10H3z"/></svg></span>Veterinario a domicilio para perros y gatos</div>
-        <div class="pet-feat"><span class="pf-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>Consultas online y asesoramiento</div>
-        <div class="pet-feat"><span class="pf-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h4l2 5 4-10 2 5h4"/></svg></span>Vacunación y estudios a domicilio</div>
-      </div>
-      <a href="#cotizar" class="btn btn-coral">Quiero asociarme</a>
+<!-- COTIZADOR -->
+<section class="block" id="cotizar">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Cotizador</span>
+      <h2>Calculá tu precio en 4 preguntas</h2>
+      <p>Respondé simple y te mostramos el precio exacto de cada plan para tu situación.<br><small>Precios reales de septiembre 2026 · AMBA e Interior · Relación de dependencia y monotributistas · Individual, matrimonio y familia</small></p>
     </div>
-    <div class="pet-media-wrap reveal">
-      <div class="media warm tall"><img alt="Veterinaria a domicilio para tu mascota" loading="lazy"
-        src="https://cdn.prod.website-files.com/6807c0c81fda1bf62762e2ec/6a219f2f516b4a4b452f151e_Mascota%20%282%29.avif"
-        onerror="this.style.display='none'"></div>
-      <div class="pet-badge">
-        <div class="big">$0</div>
-        <small>de cargo extra · incluido en todos los planes</small>
+
+    <div class="cotizador reveal">
+      <div class="cotiz-progress">
+        <span class="p-bar" data-step="1"></span><span class="p-bar" data-step="2"></span>
+        <span class="p-bar" data-step="3"></span><span class="p-bar" data-step="4"></span>
       </div>
+
+      <div class="cotiz-step active" data-step="1">
+        <div class="cotiz-q">¿Dónde vivís?</div>
+        <div class="cotiz-opts">
+          <div class="cotiz-opt" onclick="cotizSelect(1,'📍 AMBA (Buenos Aires y GBA)')">📍 AMBA (Buenos Aires y GBA)</div>
+          <div class="cotiz-opt" onclick="cotizSelect(1,'📍 Interior del país')">📍 Interior del país</div>
+        </div>
+      </div>
+
+      <div class="cotiz-step" data-step="2">
+        <div class="cotiz-q">¿Cuál es tu situación laboral?</div>
+        <div class="cotiz-opts">
+          <div class="cotiz-opt" onclick="cotizSelect(2,'💼 Trabajo en relación de dependencia')">💼 Trabajo en relación de dependencia</div>
+          <div class="cotiz-opt" onclick="cotizSelect(2,'🧾 Soy monotributista o autónomo')">🧾 Soy monotributista o autónomo</div>
+          <div class="cotiz-opt" onclick="cotizSelect(2,'✨ Quiero el plan sin cuota (solo aportes)')">✨ Quiero el plan sin cuota (solo aportes)</div>
+        </div>
+        <div class="cotiz-back" onclick="cotizBack()">← Volver</div>
+      </div>
+
+      <div class="cotiz-step" data-step="3">
+        <div class="cotiz-q">¿Qué edad tenés?</div>
+        <div class="cotiz-opts">
+          <div class="cotiz-opt" onclick="cotizSelect(3,'🧑 1 a 29 años')">🧑 1 a 29 años</div>
+          <div class="cotiz-opt" onclick="cotizSelect(3,'🧑 30 a 39 años')">🧑 30 a 39 años</div>
+          <div class="cotiz-opt" onclick="cotizSelect(3,'🧑 40 a 49 años')">🧑 40 a 49 años</div>
+          <div class="cotiz-opt" onclick="cotizSelect(3,'🧑 50 a 59 años')">🧑 50 a 59 años</div>
+        </div>
+        <div class="cotiz-back" onclick="cotizBack()">← Volver</div>
+      </div>
+
+      <div class="cotiz-step" data-step="4">
+        <div class="cotiz-q">¿A quién querés cubrir?</div>
+        <div class="cotiz-opts">
+          <div class="cotiz-opt" onclick="cotizSelect(4,'👤 Solo yo')">👤 Solo yo</div>
+          <div class="cotiz-opt" onclick="cotizSelect(4,'👫 Yo + pareja')">👫 Yo + pareja</div>
+          <div class="cotiz-opt" onclick="cotizSelect(4,'👨‍👩‍👦 Yo + pareja + 1 hijo')">👨‍👩‍👦 Yo + pareja + 1 hijo</div>
+          <div class="cotiz-opt" onclick="cotizSelect(4,'👨‍👩‍👧‍👦 Yo + pareja + 2 hijos')">👨‍👩‍👧‍👦 Yo + pareja + 2 hijos</div>
+          <div class="cotiz-opt" onclick="cotizSelect(4,'👨‍👩‍👧‍👦 Yo + pareja + 3 hijos o más')">👨‍👩‍👧‍👦 Yo + pareja + 3 hijos o más</div>
+        </div>
+        <div class="cotiz-back" onclick="cotizBack()">← Volver</div>
+      </div>
+
+      <div class="cotiz-step" data-step="5">
+        <div class="cotiz-result">
+          <p style="color:var(--ink-soft);font-size:.95rem">Con tus datos, un asesor te confirma el precio exacto de tu plan</p>
+          <div class="rprice">💬</div>
+          <div class="rplan">Ya tenemos tu situación — confirmalo con un asesor por WhatsApp</div>
+          <a href="#" id="cotiz-wa-link" target="_blank" class="btn btn-primary btn-block">Confirmar con un asesor →</a>
+        </div>
+        <div class="cotiz-back" onclick="cotizRestart()">↺ Volver a calcular</div>
+      </div>
+
+      <p class="cotiz-fine">* Precios de septiembre 2026. Sujetos a actualización mensual.</p>
+    </div>
+
+    <div class="quick-stats" style="margin-top:3rem">
+      <div class="qstat"><b>70+</b><span>Clínicas y Sanatorios</span><small>CABA, GBA y provincias</small></div>
+      <div class="qstat"><b>2500+</b><span>Profesionales</span><small>Acceso directo sin derivación</small></div>
+      <div class="qstat"><b>7</b><span>Centros Odontológicos</span><small>Smile Group — propios</small></div>
+      <div class="qstat"><b>24 hs</b><span>Médico Online</span><small>Videollamada sin cargo extra</small></div>
     </div>
   </div>
 </section>
 
-<!-- TELEFONOS -->
-<section style="padding-top:1.2rem">
-  <div class="phones">
-    <a class="phone reveal" href="tel:08108883226"><span class="pic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2Z"/></svg></span><div><small>Urgencias médicas</small><b>0810-888-3226</b></div></a>
-    <a class="phone reveal" href="tel:08102225522"><span class="pic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></span><div><small>Atención al cliente</small><b>0810-222-5522</b></div></a>
-    <a class="phone reveal" href="tel:08106667676"><span class="pic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg></span><div><small>Asistencia al viajero</small><b>0810-666-7676</b></div></a>
+<!-- BENEFICIOS -->
+<section class="block" id="beneficios" style="background:var(--mint)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Beneficios</span>
+      <h2>Todo lo que incluye tu plan</h2>
+      <p>Servicios que otras prepagas cobran aparte — incluidos en todos los planes Premedic.</p>
+    </div>
+    <div class="benefits">
+      <div class="bcard reveal"><div class="bicon">📱</div><h3>APP Premedic</h3><p>Credencial digital, cartilla médica, autorizaciones y videollamada médica 24 hs desde tu celular.</p></div>
+      <div class="bcard reveal"><div class="bicon">🏥</div><h3>+2500 Prestadores</h3><p>Acceso directo sin necesidad de médico de cabecera. Las principales clínicas del país.</p></div>
+      <div class="bcard reveal"><div class="bicon">🎥</div><h3>Médico Online 24 hs</h3><p>Consultas médicas por videollamada en cualquier momento, sin costo adicional.</p></div>
+      <div class="bcard reveal"><div class="bicon">🦷</div><h3>Red Odontológica</h3><p>7 centros odontológicos propios (Smile Group) con turnos disponibles inmediatamente.</p></div>
+      <div class="bcard reveal"><div class="bicon">🚫</div><h3>Sin Coseguros</h3><p>Consultas en Pediatría, Clínica Médica y Ginecología sin coseguro adicional.</p></div>
+      <div class="bcard reveal"><div class="bicon">💊</div><h3>40% en Farmacias</h3><p>Descuento en medicamentos recetados. Convenio con Farmacity y amplia red.</p></div>
+      <div class="bcard reveal"><div class="bicon">🤖</div><h3>Médico IA 24/7</h3><p>Asistente de salud con inteligencia artificial disponible en cualquier momento desde la app.</p></div>
+      <div class="bcard reveal"><div class="bicon">🐾</div><h3>Veterinaria a Domicilio</h3><p>Atención veterinaria a domicilio incluida en todos los planes — sin costo adicional.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CARTILLA / PRESTADORES -->
+<section class="block cartilla-sec" id="prestadores">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Cartilla Médica</span>
+      <h2>Prestadores de primer nivel</h2>
+      <p>Las principales clínicas, sanatorios y centros médicos de Argentina.</p>
+    </div>
+
+    <div class="zone-tabs reveal">
+      <div class="zone-tab active" onclick="zoneShow(this,'caba')">📍 CABA</div>
+      <div class="zone-tab" onclick="zoneShow(this,'norte')">📍 Zona Norte GBA</div>
+      <div class="zone-tab" onclick="zoneShow(this,'sur')">📍 Zona Sur GBA</div>
+      <div class="zone-tab" onclick="zoneShow(this,'oeste')">📍 Zona Oeste GBA</div>
+    </div>
+
+    <div class="zone-panel active" id="zone-caba">
+      <div class="prest-grid">
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Hospital Británico</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorio La Trinidad Mitre</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Hospital Alemán</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Clínica Bazterrica</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorio Finochietto</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>CEMIC Palermo / Saavedra</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Clínica San Camilo</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>ICBA</div>
+      </div>
+      <p style="text-align:center;color:var(--ink-soft);font-size:.9rem;margin-top:1rem">y muchos más...</p>
+    </div>
+
+    <div class="zone-panel" id="zone-norte">
+      <div class="prest-grid">
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorio Las Lomas</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorio San Lucas</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Trinidad San Isidro</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorio Anchorena</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Diagnóstico Maipú</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Hospital Privado Modelo</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorio San Pablo</div>
+      </div>
+      <p style="text-align:center;color:var(--ink-soft);font-size:.9rem;margin-top:1rem">y muchos más...</p>
+    </div>
+
+    <div class="zone-panel" id="zone-sur">
+      <div class="prest-grid">
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Trinidad Quilmes</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorio ITOIZ</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Clínica IMA Adrogué</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorio Bernal</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Clínica Monte Grande</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Fundación Científica del Sur</div>
+      </div>
+      <p style="text-align:center;color:var(--ink-soft);font-size:.9rem;margin-top:1rem">y muchos más...</p>
+    </div>
+
+    <div class="zone-panel" id="zone-oeste">
+      <div class="prest-grid">
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Hospital San Juan de Dios</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Trinidad Ramos Mejía</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Clínica Modelo Morón</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorio General Sarmiento</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Sanatorio del Oeste</div>
+        <div class="prest-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Premedic Medical Center</div>
+      </div>
+      <p style="text-align:center;color:var(--ink-soft);font-size:.9rem;margin-top:1rem">y muchos más...</p>
+    </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section id="contacto">
-  <div class="cta reveal">
-    <h2>Asociate hoy y empezá a cuidarte.</h2>
-    <p>Cotizá tu plan en minutos y un asesor te acompaña en todo el proceso. Para vos, tu familia y tu mascota.</p>
-    <a href="#cotizar" class="btn">Cotizar mi plan gratis</a>
+<section>
+  <div class="wrap">
+    <div class="cta reveal">
+      <h2>¿Listo para mejorar tu cobertura médica?</h2>
+      <p>Un asesor te guía para encontrar el plan ideal para vos y tu familia, sin compromiso.</p>
+      <div class="cta-btns">
+        <a href="https://api.whatsapp.com/send?phone=5491178312958&text=Hola!%20Quiero%20info%20sobre%20Premedic" target="_blank" class="btn btn-primary">Escribinos por WhatsApp</a>
+        <a href="tel:+5491178312958" class="btn btn-ghost-light">Llamanos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" id="preguntas">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Preguntas Frecuentes</span>
+      <h2>Lo que más nos preguntan</h2>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="faqToggle(this)">¿Qué necesito para asociarme sin pagar cuota? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="faq-a"><p>Solo tu recibo de sueldo. Con la derivación de tus aportes de obra social podés acceder al Plan por Aportes sin pagar ningún monto adicional. El traspaso se realiza online en la web de la Superintendencia de Servicios de Salud.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqToggle(this)">¿Los monotributistas pueden afiliarse? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="faq-a"><p>¡Sí! Los monotributistas pueden derivar sus aportes y acceder a los planes de Premedic. Además pueden acceder a la planilla sin IVA, lo que reduce la cuota un 10,5%.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqToggle(this)">¿Hay carencia en urgencias? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="faq-a"><p>No. Desde el momento que el afiliado ingresa al plan, está cubierto al 100% para internación o cualquier tratamiento de urgencia, sin período de carencia.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqToggle(this)">¿Cuáles son las formas de pago? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="faq-a"><p>CBU, transferencia, tarjeta de crédito o efectivo. Adhiriéndote al débito automático (CBU o tarjeta) obtenés un 20% de descuento en la cuota mensual.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqToggle(this)">¿Qué cobertura tienen en medicamentos? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="faq-a"><p>Todos los planes incluyen 40% de descuento en medicamentos recetados en Farmacity y amplia red. Para medicamentos crónicos, la cobertura es del 70% según ley.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -455,57 +612,94 @@
           <svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="#23A06C"/><path d="M16 6c-3 0-5.5 2.4-5.5 5.4 0 2.2 1.4 4 3.3 4.8V25a1 1 0 0 0 2 0v-9c1.9-.8 3.3-2.6 3.3-4.8C19.1 8.4 16.6 6 16 6Z" fill="#fff"/></svg>
           Premedic
         </div>
-        <p style="max-width:32ch;color:#a9c5bb">Medicina privada con atención personalizada y un sistema de salud adaptado a vos y tu familia.</p>
+        <p style="max-width:34ch;color:#a9c5bb">Agencia Comercial Oficial de Grupo Premedic. Medicina privada con la mejor relación precio-servicio del mercado.</p>
       </div>
-      <div><h4>Planes</h4><a href="#planes">Por aportes</a><a href="#planes">Simple</a><a href="#planes">200 · 300 · 400 · 500</a><a href="#mascotas">Amar Mascotas</a></div>
-      <div><h4>Premedic</h4><a href="#centros">Centros propios</a><a href="#">Cartilla médica</a><a href="#">Sobre Premedic</a><a href="#contacto">Contacto</a></div>
-      <div><h4>Contacto</h4><a href="https://api.whatsapp.com/send/?phone=5491122647285">💬 WhatsApp</a><a href="https://afiliados.grupopremedic.com.ar/">🔐 Mi portal</a><a href="#">📍 Presencia en 5 provincias</a></div>
+      <div><h4>Planes</h4><a href="#planes">Plan por Aportes</a><a href="#planes">Plan 200</a><a href="#planes">Plan 300</a><a href="#planes">Plan 400</a></div>
+      <div><h4>Información</h4><a href="#beneficios">Beneficios</a><a href="#prestadores">Prestadores</a><a href="#preguntas">Preguntas Frecuentes</a><a href="#cotizar">Cotizador</a></div>
+      <div><h4>Contacto</h4><a href="https://api.whatsapp.com/send?phone=5491178312958&text=Hola!%20Quiero%20info%20sobre%20Premedic" target="_blank">💬 WhatsApp</a><a href="tel:+5491178312958">📞 Llamanos</a></div>
     </div>
     <div class="foot-bottom">
-      Superintendencia de Servicios de Salud · Órgano de control de Obras Sociales y entidades de Medicina Prepaga · 0800-222-SALUD (72583) · www.sssalud.gob.ar · RNEMP Nº 112172<br>
-      Grupo Premedic — Medicina Privada (Grupo DDM S.A.) · © 2026 Todos los derechos reservados.
+      Grupo DDM S.A. · RNEMP Nº 112172 · Superintendencia de Servicios de Salud<br>
+      © 2026 Agencia Comercial Oficial Premedic. Todos los derechos reservados.<br>
+      Precios orientativos sujetos a actualización. Consultar vigencia.
     </div>
   </div>
 </footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a class="wa-float" href="https://api.whatsapp.com/send?phone=5491178312958&text=Hola!%20Quiero%20info%20sobre%20Premedic" target="_blank" aria-label="Escribinos por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.11.11-1.79-.11a16.5 16.5 0 0 1-1.78-.66c-3.14-1.36-5.19-4.5-5.34-4.71-.16-.21-1.28-1.7-1.28-3.25s.81-2.3 1.1-2.62c.28-.31.62-.39.83-.39.21 0 .42 0 .6.01.19.01.45-.07.7.54.26.62.88 2.15.96 2.3.08.16.13.34.03.55-.11.21-.16.34-.31.52-.16.19-.33.42-.47.56-.16.16-.32.33-.14.64.19.31.83 1.36 1.78 2.2 1.22 1.09 2.25 1.43 2.56 1.59.31.16.5.14.68-.08.19-.22.79-.92.99-1.24.21-.31.42-.26.7-.16.28.11 1.79.84 2.1 1 .3.16.5.24.57.37.08.13.08.75-.16 1.43Z"/></svg>
+</a>
 
 <script>
   const burger=document.getElementById('burger'),nav=document.getElementById('nav');
   burger.addEventListener('click',()=>nav.classList.toggle('open'));
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
-  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  const WHATSAPP="5491122647285"; // WhatsApp de Premedic (público) — cambialo por el de captura de leads si querés
-  function enviarCotizacion(){
+  const WHATSAPP="5491178312958";
+
+  function setPlanInterest(plan){ document.getElementById('plan').value = plan; }
+
+  function enviarLead(){
     const n=document.getElementById('nombre').value.trim();
     const t=document.getElementById('tel').value.trim();
-    const p=document.getElementById('plan').value;
-    if(!n||!t){alert('Completá tu nombre y teléfono para cotizar.');return;}
-    const msg=`Hola Premedic! Quiero cotizar un plan.%0A%0ANombre: ${encodeURIComponent(n)}%0ATeléfono: ${encodeURIComponent(t)}%0AInterés: ${encodeURIComponent(p)}`;
-    window.open(`https://wa.me/${WHATSAPP}?text=${msg}`,'_blank');
+    const e=document.getElementById('email').value.trim();
+    const p=document.getElementById('plan').value || 'No especificado';
+    if(!n||!t){alert('Completá tu nombre y WhatsApp para continuar.');return;}
+    document.getElementById('lead-form').style.display='none';
+    document.getElementById('lead-success').style.display='block';
+    const msg=`Hola Premedic! Quiero asesoramiento.%0A%0ANombre: ${encodeURIComponent(n)}%0AWhatsApp: ${encodeURIComponent(t)}%0AEmail: ${encodeURIComponent(e)}%0AInterés: ${encodeURIComponent(p)}`;
+    document.getElementById('lead-wa-link').href=`https://wa.me/${WHATSAPP}?text=${msg}`;
   }
 
-  // Contador regresivo de la promo
-  (function(){
-    const el=document.getElementById('cd');
-    if(!el) return;
-    const DURACION_HS=72; // ← cambiá acá cuántas horas dura la promo
-    let fin;
-    try{
-      const k='promoPremedicFin', saved=localStorage.getItem(k);
-      fin = (saved && +saved>Date.now()) ? +saved : Date.now()+DURACION_HS*3600*1000;
-      localStorage.setItem(k,fin);
-    }catch(e){ fin=Date.now()+DURACION_HS*3600*1000; }
-    function tick(){
-      let s=Math.max(0,Math.floor((fin-Date.now())/1000));
-      const h=String(Math.floor(s/3600)).padStart(2,'0');
-      const m=String(Math.floor((s%3600)/60)).padStart(2,'0');
-      const sec=String(s%60).padStart(2,'0');
-      el.textContent=`${h}:${m}:${sec}`;
+  // Cotizador de 4 pasos -> deriva a WhatsApp con las respuestas
+  let cotizAnswers={};
+  function cotizSelect(step,value){
+    cotizAnswers[step]=value;
+    document.querySelectorAll('.p-bar').forEach(b=>{ if(+b.dataset.step<=step) b.classList.add('done'); });
+    if(step<4){
+      document.querySelector(`.cotiz-step[data-step="${step}"]`).classList.remove('active');
+      document.querySelector(`.cotiz-step[data-step="${step+1}"]`).classList.add('active');
+    } else {
+      document.querySelector(`.cotiz-step[data-step="4"]`).classList.remove('active');
+      document.querySelector(`.cotiz-step[data-step="5"]`).classList.add('active');
+      const resumen=`Hola Premedic! Quiero confirmar el precio de mi plan.%0A%0AZona: ${encodeURIComponent(cotizAnswers[1]||'')}%0ASituación: ${encodeURIComponent(cotizAnswers[2]||'')}%0AEdad: ${encodeURIComponent(cotizAnswers[3]||'')}%0AGrupo familiar: ${encodeURIComponent(cotizAnswers[4]||'')}`;
+      document.getElementById('cotiz-wa-link').href=`https://wa.me/${WHATSAPP}?text=${resumen}`;
     }
-    tick(); setInterval(tick,1000);
-  })();
+  }
+  function cotizBack(){
+    const active=document.querySelector('.cotiz-step.active');
+    const step=+active.dataset.step;
+    if(step<=1) return;
+    active.classList.remove('active');
+    document.querySelector(`.cotiz-step[data-step="${step-1}"]`).classList.add('active');
+    document.querySelector(`.p-bar[data-step="${step-1}"]`).classList.remove('done');
+  }
+  function cotizRestart(){
+    cotizAnswers={};
+    document.querySelectorAll('.p-bar').forEach(b=>b.classList.remove('done'));
+    document.querySelectorAll('.cotiz-step').forEach(s=>s.classList.remove('active'));
+    document.querySelector('.cotiz-step[data-step="1"]').classList.add('active');
+  }
+
+  // Cartilla por zona
+  function zoneShow(el,zone){
+    document.querySelectorAll('.zone-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.zone-panel').forEach(p=>p.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('zone-'+zone).classList.add('active');
+  }
+
+  // FAQ acordeón
+  function faqToggle(el){
+    const item=el.parentElement;
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  }
 </script>
 </body>
 </html>
