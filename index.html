@@ -105,6 +105,12 @@
   .zrow.alt .znum{background:var(--coral-wash)}
   .zrow h3{font-size:1.15rem;margin-bottom:.3rem}
   .zrow p{color:var(--ink-soft);font-size:.98rem;max-width:60ch}
+  .zrow.pets{background:linear-gradient(135deg,var(--coral-wash),#fff);border-radius:20px;padding:1.6rem 1.4rem;margin:.3rem 0;border-bottom:none}
+  .zrow.pets .znum{width:88px;height:88px;flex:0 0 88px;border-radius:24px;background:var(--coral);font-size:2.1rem;box-shadow:var(--shadow-sm)}
+  .zrow.pets h3{font-size:1.3rem;color:var(--coral-deep)}
+  .pets-feats{list-style:none;margin-top:.6rem;display:flex;flex-direction:column;gap:.35rem}
+  .pets-feats li{display:flex;gap:.5rem;align-items:flex-start;font-size:.92rem;color:var(--ink-soft)}
+  .pets-feats li svg{flex:0 0 15px;margin-top:3px;color:var(--coral-deep)}
 
   /* CARTILLA — acordeón vertical en vez de tabs */
   .cartilla-sec{background:var(--mint)}
@@ -331,7 +337,18 @@
       <div class="zrow"><div class="znum">🚫</div><div><h3>Sin Coseguros</h3><p>Consultas en Pediatría, Clínica Médica y Ginecología sin coseguro adicional.</p></div></div>
       <div class="zrow alt"><div class="znum">💊</div><div><h3>40% en Farmacias</h3><p>Descuento en medicamentos recetados. Convenio con Farmacity y amplia red.</p></div></div>
       <div class="zrow"><div class="znum">🤖</div><div><h3>Médico IA 24/7</h3><p>Asistente de salud con inteligencia artificial disponible en cualquier momento desde la app.</p></div></div>
-      <div class="zrow alt"><div class="znum">🐾</div><div><h3>Veterinaria a Domicilio</h3><p>Atención veterinaria a domicilio incluida en todos los planes — sin costo adicional.</p></div></div>
+      <div class="zrow pets">
+        <div class="znum">🐾</div>
+        <div>
+          <h3>Amar Mascotas — Veterinaria a Domicilio</h3>
+          <p>Somos la primera prepaga que también cuida a tu mascota. Atención veterinaria sin moverte de tu casa, incluida en todos los planes sin costo adicional.</p>
+          <ul class="pets-feats">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Veterinario a domicilio para perros y gatos</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Consultas online y asesoramiento</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Vacunación y estudios a domicilio</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -424,11 +441,11 @@
       <h2>¿Listo para mejorar tu cobertura médica?</h2>
       <p>Un asesor te guía para encontrar el plan ideal para vos y tu familia, sin compromiso. Dejanos tus datos o escribinos directo.</p>
       <div class="contact-chips">
-        <a class="cchip" href="https://api.whatsapp.com/send?phone=5491178312958&text=Hola!%20Quiero%20info%20sobre%20Premedic" target="_blank">
+        <a class="cchip" href="https://api.whatsapp.com/send?phone=5491126016001&text=Hola!%20Quiero%20info%20sobre%20Premedic" target="_blank">
           <span class="ic">💬</span><div><b>WhatsApp</b><small>Respuesta inmediata</small></div>
         </a>
-        <a class="cchip" href="tel:+5491178312958">
-          <span class="ic">📞</span><div><b>Llamanos</b><small>+54 9 11 7831-2958</small></div>
+        <a class="cchip" href="tel:+5491126016001">
+          <span class="ic">📞</span><div><b>Llamanos</b><small>+54 9 11 2601-6001</small></div>
         </a>
       </div>
     </div>
@@ -470,8 +487,8 @@
       <h2>Asociate hoy y empezá a cuidarte.</h2>
       <p>Sin pagar cuota si derivás tus aportes, o con el plan que mejor se adapte a tu bolsillo.</p>
       <div class="cta-btns">
-        <a href="https://api.whatsapp.com/send?phone=5491178312958&text=Hola!%20Quiero%20info%20sobre%20Premedic" target="_blank" class="btn btn-primary">Escribinos por WhatsApp</a>
-        <a href="tel:+5491178312958" class="btn btn-ghost-light">Llamanos</a>
+        <a href="https://api.whatsapp.com/send?phone=5491126016001&text=Hola!%20Quiero%20info%20sobre%20Premedic" target="_blank" class="btn btn-primary">Escribinos por WhatsApp</a>
+        <a href="tel:+5491126016001" class="btn btn-ghost-light">Llamanos</a>
       </div>
     </div>
   </div>
@@ -521,7 +538,7 @@
       </div>
       <div><h4>Planes</h4><a href="#planes">Plan por Aportes</a><a href="#planes">Plan 200</a><a href="#planes">Plan 300</a><a href="#planes">Plan 400</a></div>
       <div><h4>Información</h4><a href="#beneficios">Beneficios</a><a href="#prestadores">Prestadores</a><a href="#preguntas">Preguntas Frecuentes</a><a href="#contacto">Contacto</a></div>
-      <div><h4>Contacto</h4><a href="https://api.whatsapp.com/send?phone=5491178312958&text=Hola!%20Quiero%20info%20sobre%20Premedic" target="_blank">💬 WhatsApp</a><a href="tel:+5491178312958">📞 Llamanos</a></div>
+      <div><h4>Contacto</h4><a href="https://api.whatsapp.com/send?phone=5491126016001&text=Hola!%20Quiero%20info%20sobre%20Premedic" target="_blank">💬 WhatsApp</a><a href="tel:+5491126016001">📞 Llamanos</a></div>
     </div>
     <div class="foot-bottom">
       Grupo DDM S.A. · RNEMP Nº 112172 · Superintendencia de Servicios de Salud<br>
@@ -531,7 +548,7 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://api.whatsapp.com/send?phone=5491178312958&text=Hola!%20Quiero%20info%20sobre%20Premedic" target="_blank" aria-label="Escribinos por WhatsApp">
+<a class="wa-float" href="https://api.whatsapp.com/send?phone=5491126016001&text=Hola!%20Quiero%20info%20sobre%20Premedic" target="_blank" aria-label="Escribinos por WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.11.11-1.79-.11a16.5 16.5 0 0 1-1.78-.66c-3.14-1.36-5.19-4.5-5.34-4.71-.16-.21-1.28-1.7-1.28-3.25s.81-2.3 1.1-2.62c.28-.31.62-.39.83-.39.21 0 .42 0 .6.01.19.01.45-.07.7.54.26.62.88 2.15.96 2.3.08.16.13.34.03.55-.11.21-.16.34-.31.52-.16.19-.33.42-.47.56-.16.16-.32.33-.14.64.19.31.83 1.36 1.78 2.2 1.22 1.09 2.25 1.43 2.56 1.59.31.16.5.14.68-.08.19-.22.79-.92.99-1.24.21-.31.42-.26.7-.16.28.11 1.79.84 2.1 1 .3.16.5.24.57.37.08.13.08.75-.16 1.43Z"/></svg>
 </a>
 
@@ -543,7 +560,7 @@
   const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  const WHATSAPP="5491178312958";
+  const WHATSAPP="5491126016001";
 
   function setPlanInterest(plan){ document.getElementById('plan').value = plan; document.getElementById('contacto').scrollIntoView({behavior:'smooth'}); }
 
